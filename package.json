@@ -1,0 +1,51 @@
+{
+  "name": "react-typescript-yarn-lerna-monorepo-eslint-prettier-boilerplate",
+  "author": {
+    "name": "Michiel Bouw",
+    "url": "http://michielbouw.nl"
+  },
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "start": "lerna run start --parallel",
+    "build": "lerna run build --parallel",
+    "test": "CI=true lerna run test --parallel",
+    "typecheck": "lerna run typecheck --parallel",
+    "lint": "lerna run lint --parallel",
+    "lint:fix": "lerna run lint:fix --parallel",
+    "start:www": "lerna run start --scope=\"@web/shared\" --scope=\"@web/utils\" --scope=\"@web/www\" --parallel",
+    "build:www": "lerna run build --scope=\"@web/shared\" --scope=\"@web/utils\" --scope=\"@web/www\" --parallel",
+    "test:www": "CI=true lerna run test --scope=\"@web/shared\" --scope=\"@web/utils\" --scope=\"@web/www\" --parallel",
+    "lint:www": "lerna run lint --scope=\"@web/shared\" --scope=\"@web/utils\" --scope=\"@web/www\" --parallel",
+    "lint:fix:www": "lerna run lint:fix --scope=\"@web/shared\" --scope=\"@web/utils\" --scope=\"@web/www\" --parallel",
+    "clean": "lerna clean",
+    "clean:update": "lerna clean && lerna bootstrap"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^9.0.0",
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.13.5",
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.7",
+    "@typescript-eslint/eslint-plugin": "^2.31.0",
+    "@typescript-eslint/parser": "^2.31.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-simple-import-sort": "^5.0.3",
+    "lerna": "^3.20.2",
+    "node-sass": "^4.14.1",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.0",
+    "typescript": "~3.7.2"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  }
+}
