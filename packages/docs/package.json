@@ -29,7 +29,7 @@
     "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
     "prepub": "yarn build",
     "deps": "yarn install",
-    "pub": "firebase deploy"
+    "pub": "npm version patch --force && firebase deploy"
   },
   "eslintConfig": {
     "extends": [
