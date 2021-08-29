@@ -1,5 +1,6 @@
 import { ActionCreator } from '../types';
 
+// Creates and ActionCreator
 export function createActionCreator<
   P = undefined,
   T extends string = string,

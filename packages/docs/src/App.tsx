@@ -23,7 +23,7 @@ function App(): React.ReactElement {
       <div className="h-full">
         <header className="border-black h-20 w-full p-1 flex align-center bg-purple-100 fixed shadow">
           <h6 className="text-purple-700 text-lg font-semibold my-auto p-4">
-            ez-dux
+            ez-dux - your new best friend
           </h6>
           <h6
             className="text-purple-500 text-lg font-semibold my-auto p-4"

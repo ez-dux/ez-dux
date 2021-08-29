@@ -32,7 +32,7 @@
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags",
     "deps": "yarn install",
-    "pub": "yarn publish"
+    "pub": "npm version minor --force && npm publish"
   },
   "dependencies": {
     "lodash": "^4.17.21",
