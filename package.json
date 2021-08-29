@@ -16,7 +16,7 @@
     "clean": "lerna clean",
     "clean:update": "rm -rf node_modules && yarn install && lerna clean && lerna bootstrap",
     "deps": "lerna run deps --parallel",
-    "pub": "lerna run pub --parallel"
+    "pub": "lerna run pub --since HEAD~1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
