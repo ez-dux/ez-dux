@@ -1,0 +1,41 @@
+{
+  "name": "@ez-dux/core",
+  "version": "1.0.7",
+  "author": {
+    "name": "Wagner Silva",
+    "url": "https://ez-dux.web.app/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ez-dux/ez-dux.git"
+  },
+  "keywords": ["redux", "react"],
+  "bugs": {
+    "url": "https://github.com/ez-dux/ez-dux/issues"
+  },
+  "homepage": "https://github.com/ez-dux/ez-dux",
+  "license": "MIT",
+  "private": false,
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "start": "tsc -p tsconfig.json -w",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "lint": "eslint . --ignore-path ../../.eslintignore --ext ts --ext tsx --ext js --ext jsx",
+    "lint:fix": "eslint --fix . --ignore-path ../../.eslintignore --ext ts --ext tsx --ext js --ext jsx",
+    "test": "jest --config jestconfig.json",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags",
+    "deps": "yarn install",
+    "pub": "yarn publish"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "ts-toolbelt": "^9.3.12"
+  }
+}
