@@ -1,6 +1,6 @@
 {
   "name": "@ez-dux/docs",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": false,
   "license": "MIT",
   "dependencies": {
@@ -27,10 +27,9 @@
     "eject": "react-scripts eject",
     "format": "prettier --write src/**/*.ts{,x}",
     "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
-    "publish": "firebase deploy",
-    "prepublish": "yarn build",
+    "prepub": "yarn build",
     "deps": "yarn install",
-    "pub": "yarn publish"
+    "pub": "firebase deploy"
   },
   "eslintConfig": {
     "extends": [
@@ -51,12 +50,12 @@
     ]
   },
   "devDependencies": {
+    "@ez-dux/core": "^1.0.5",
     "@types/react-syntax-highlighter": "^13.5.2",
     "@typescript-eslint/eslint-plugin": "^4.28.5",
     "@typescript-eslint/parser": "^4.28.5",
     "autoprefixer": "^9",
     "postcss": "^7",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
-    "@ez-dux/core": "^1.0.5"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   }
 }
