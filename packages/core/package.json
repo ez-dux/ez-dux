@@ -9,7 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/ez-dux/ez-dux.git"
   },
-  "keywords": ["redux", "react"],
+  "keywords": [
+    "redux",
+    "react"
+  ],
   "bugs": {
     "url": "https://github.com/ez-dux/ez-dux/issues"
   },
@@ -32,7 +35,7 @@
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags",
     "deps": "yarn install",
-    "pub": "npm version minor --force && npm publish"
+    "pub": "npm version patch --force && yarn publish"
   },
   "dependencies": {
     "lodash": "^4.17.21",

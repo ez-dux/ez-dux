@@ -34,8 +34,10 @@ interface ActionCreatorWithNoParameters<T extends string>
   (): Action<T>;
 }
 
-interface ActionCreatorWithOnlyPayload<P = undefined, T extends string = string>
-  extends ActionCreatorStatic<T> {
+interface ActionCreatorWithOnlyPayload<
+  P = undefined,
+  T extends string = string
+> extends ActionCreatorStatic<T> {
   (payload: P): Action<P, T>;
 }
 
