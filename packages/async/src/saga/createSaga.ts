@@ -1,4 +1,4 @@
-import { call, put, select,takeEvery, takeLatest } from 'redux-saga/effects';
+import { call, put, select, takeEvery, takeLatest } from 'redux-saga/effects';
 import { Function, O } from 'ts-toolbelt';
 
 import { AsyncActionCreators, Saga } from '../types';
@@ -11,7 +11,7 @@ export function createSaga<
   Payload,
   Meta,
   E = Error,
-  RootState = O.Object,
+  RootState = O.Object
 >(
   asyncFunction: Function.Function<[Payload, RootState, Meta], Promise<Result>>,
   actionCreators: AsyncActionCreators<Result, Payload, Meta, E>,

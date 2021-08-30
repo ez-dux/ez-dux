@@ -57,7 +57,7 @@ export function createModule<Result, Payload, Meta = undefined, E = Error>({
   );
 
   // @ts-ignore
-  reducer.addCase(actions.dismissError, (state) =>
+  reducer.addCase(actions.dismissError, state =>
     update(state, {
       error: { $set: null },
     }),
