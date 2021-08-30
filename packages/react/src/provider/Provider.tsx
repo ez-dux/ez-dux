@@ -1,8 +1,9 @@
-import { Store } from '../types';
-import { O } from 'ts-toolbelt';
-import { Provider as ReduxProvider } from 'react-redux';
 import React from 'react';
 import { useAsync } from 'react-async-hook';
+import { Provider as ReduxProvider } from 'react-redux';
+import { O } from 'ts-toolbelt';
+
+import { Store } from '../types';
 
 interface ProviderProps<R extends O.Object> {
   createStore: () => Promise<Store<R>>;
@@ -26,5 +27,7 @@ export function Provider<R extends O.Object>({
 }
 
 Provider.defaultProps = {
-  Loader: () => <></>,
+  Loader: function Loader() {
+    return <></>;
+  },
 };

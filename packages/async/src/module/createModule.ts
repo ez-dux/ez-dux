@@ -1,9 +1,10 @@
-import { AsyncActionCreators, AsyncState, CreateModuleConfig } from '../types';
-import { Module } from '@ez-dux/react';
 import { createReducer } from '@ez-dux/core';
+import { Module } from '@ez-dux/react';
 import update from 'immutability-helper';
+
 import { createActionCreators } from '../actions';
 import { createSaga } from '../saga';
+import { AsyncActionCreators, AsyncState, CreateModuleConfig } from '../types';
 
 export function createModule<Result, Payload, Meta = undefined, E = Error>({
   namespace,

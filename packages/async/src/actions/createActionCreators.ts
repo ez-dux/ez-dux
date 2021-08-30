@@ -1,6 +1,7 @@
-import { AsyncActionCreators } from '../types';
 import { createActionCreator } from '@ez-dux/core';
 import toUpper from 'lodash/toUpper';
+
+import { AsyncActionCreators } from '../types';
 
 export function createActionCreators<Result, Payload, Meta, E>(
   namespace: string,

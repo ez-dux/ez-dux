@@ -1,4 +1,5 @@
 import { expect } from 'chai';
+
 import { createModule } from '../module';
 
 class State {

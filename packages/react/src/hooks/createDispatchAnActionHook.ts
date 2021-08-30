@@ -1,6 +1,6 @@
+import { ActionCreator } from '@ez-dux/core';
 import { useCallback, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { ActionCreator } from '@ez-dux/core';
 
 export function createDispatchAnActionHook<
   AC extends ActionCreator<string, string, string>

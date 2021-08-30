@@ -1,5 +1,5 @@
-import { useSelector } from 'react-redux';
 import { Selector } from '@ez-dux/core';
+import { useSelector } from 'react-redux';
 import { O } from 'ts-toolbelt';
 
 export function createUseSelectorHook<

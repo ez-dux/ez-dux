@@ -1,4 +1,5 @@
 import { expect } from 'chai';
+
 import { createStore } from '../store';
 
 class State {
