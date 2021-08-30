@@ -25,11 +25,11 @@
     "start": "craco start",
     "build": "craco build",
     "eject": "react-scripts eject",
-    "format": "prettier --write src/**/*.ts{,x}",
-    "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
+    "format": "prettier --write src/**/*.ts{,tsx}",
+    "lint": "eslint . --ignore-path ../../.eslintignore --ext ts --ext tsx --ext js --ext jsx",
+    "lint:fix": "eslint --fix . --ignore-path ../../.eslintignore --ext ts --ext tsx --ext js --ext jsx",
     "prepub": "yarn build",
-    "deps": "yarn install",
-    "pub": "npm version patch --force && firebase deploy"
+    "deps": "yarn install"
   },
   "eslintConfig": {
     "extends": [
