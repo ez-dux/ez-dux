@@ -1,24 +1,8 @@
 {
-  "name": "@ez-dux/core",
-  "version": "1.0.8",
-  "author": {
-    "name": "Wagner Silva",
-    "url": "https://ez-dux.web.app/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ez-dux/ez-dux.git"
-  },
-  "keywords": [
-    "redux",
-    "react"
-  ],
-  "bugs": {
-    "url": "https://github.com/ez-dux/ez-dux/issues"
-  },
-  "homepage": "https://github.com/ez-dux/ez-dux",
-  "license": "MIT",
+  "name": "@ez-dux/react",
   "private": false,
+  "version": "1.0.3",
+  "description": "ez-dux react",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
@@ -37,8 +21,31 @@
     "deps": "yarn install",
     "pub": "npm version patch --force && yarn publish"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ez-dux/ez-dux.git"
+  },
+  "keywords": [],
+  "author": "Wagner J. Silva",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ez-dux/ez-dux/issues"
+  },
+  "homepage": "https://github.com/ez-dux/ez-dux",
+  "devDependencies": {
+    "@types/redux": "^3.6.0",
+    "@ez-dux/core": "latest"
+  },
+  "files": [
+    "lib/**/*"
+  ],
   "dependencies": {
     "lodash": "^4.17.21",
-    "ts-toolbelt": "^9.3.12"
+    "ts-toolbelt": "^9.3.12",
+    "redux-dynamic-modules": "^5.2.3",
+    "react-redux": "^7.2.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-async-hook": "^3.6.2"
   }
 }

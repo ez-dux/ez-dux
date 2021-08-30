@@ -1,10 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es5",
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "es5"
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -12,12 +11,13 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
+    "target": "es5",
+    "module": "commonjs"
   },
   "include": [
     "packages/*/src"
