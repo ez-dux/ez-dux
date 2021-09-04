@@ -18,7 +18,7 @@ const asyncActionCreators = createAsyncActionCreators<Result, Payload, Meta, E>(
 ```tsx
 import { createSaga } from "@ez-dux/async";
 
-const asyncFunction = async (): Promise<Result> => { ... };
+const asyncFunction = async (payload, state, meta): Promise<Result> => { ... };
 const saga = createSaga({
 	asyncActionCreators,
 	asyncFunction,

@@ -15,7 +15,7 @@ module.exports = {
   testEnvironment: 'node',
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-  testPathIgnorePatterns: ['/lib/', '/node_modules/'],
+  testPathIgnorePatterns: ['/build/', '/node_modules/'],
   transformIgnorePatterns: [
     '../../node_modules/(?!@ez-dux/core|@ez-dux/react|react-markdown)',
     'node_modules/(?!react-markdown)',

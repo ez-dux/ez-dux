@@ -1,8 +1,15 @@
-import { Provider } from '@ez-dux/react/lib/provider';
+import { Provider } from '@ez-dux/react';
 import React, { useEffect, useState } from 'react';
 
 import MarkDown from './components/MarkDown';
 import { initStore } from './store';
+
+const REACT_MD =
+  'https://raw.githubusercontent.com/ez-dux/ez-dux/master/packages/react/README.md';
+const ASYNC_MD =
+  'https://raw.githubusercontent.com/ez-dux/ez-dux/master/packages/async/README.md';
+const CORE_MD =
+  'https://raw.githubusercontent.com/ez-dux/ez-dux/master/packages/core/README.md';
 
 const BUTTON_CLASSES =
   'bg-purple-600 text-white p-1 rounded my-1 cursor-pointer hover:bg-purple-100 hover:text-purple-700 transition';
@@ -66,19 +73,19 @@ function App(): React.ReactElement {
                 id="@ez-dux/core"
                 className="bg-white p-4 rounded shadow my-1"
               >
-                <MarkDown url="https://raw.githubusercontent.com/ez-dux/core/main/README.md" />
+                <MarkDown url={CORE_MD} />
               </div>
               <div
                 id="@ez-dux/async"
                 className="bg-white p-4 rounded shadow my-1"
               >
-                <MarkDown url="https://raw.githubusercontent.com/ez-dux/async/main/README.md" />
+                <MarkDown url={ASYNC_MD} />
               </div>
               <div
                 id="@ez-dux/react"
                 className="bg-white p-4 rounded shadow my-1"
               >
-                <MarkDown url="https://raw.githubusercontent.com/ez-dux/react/main/README.md" />
+                <MarkDown url={REACT_MD} />
               </div>
             </div>
           </div>
