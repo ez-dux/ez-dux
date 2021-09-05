@@ -10,9 +10,10 @@ export function createModule<Result, Payload, Meta = undefined, E = Error>({
   namespace,
   actionName,
   asyncFunction,
-}: CreateModuleConfig<Result, Payload, Meta>): Module<
-  AsyncState<Result, Payload, E>
-> {
+}: CreateModuleConfig<Result, Payload, Meta>): {
+  module: Module<AsyncState<Result, Payload, E>>;
+  actionCreators: AsyncActionCreators<Result, Payload, Meta, E>;
+} {
   const actions = createActionCreators<Result, Payload, Meta, E>(
     namespace,
     actionName,
@@ -67,11 +68,14 @@ export function createModule<Result, Payload, Meta = undefined, E = Error>({
   const saga = createSaga<Result, Payload, Meta, E>(asyncFunction, actions);
 
   return {
-    id: namespace,
-    // @ts-ignore
-    reducerMap: {
-      [namespace]: reducer,
+    module: {
+      id: namespace,
+      // @ts-ignore
+      reducerMap: {
+        [namespace]: reducer,
+      },
+      sagas: [saga],
     },
-    sagas: [saga],
+    actionCreators: actions,
   };
 }

@@ -1,5 +1,6 @@
+import { getSagaExtension } from '@ez-dux/async';
 import { Store } from '@ez-dux/react';
-import { createStore } from '@ez-dux/react/lib/store';
+import { createStore } from '@ez-dux/react';
 
 import { ageModule, AgeState, NAMESPACE } from './age';
 
@@ -11,11 +12,8 @@ interface RootState {
 export async function initStore(): Promise<Store<RootState>> {
   return createStore<RootState>(
     {
-      initialState: {
-        [NAMESPACE]: {
-          age: 99,
-        },
-      },
+      initialState: {},
+      extensions: [getSagaExtension({})],
     },
     ageModule
   );

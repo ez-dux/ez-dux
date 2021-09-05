@@ -1,27 +1,37 @@
-import { createActionCreator, createReducer } from '@ez-dux/core';
-import { createModule } from '@ez-dux/react/lib/module';
+import { AsyncState, createModule } from '@ez-dux/async';
+import { createAsyncHooks } from '@ez-dux/async/lib/hooks';
+import { createAsyncDataHooks } from '@ez-dux/async/lib/hooks/createAsyncDataHooks';
 
 export const NAMESPACE = 'age-module';
 
-export class AgeState {
+export interface Result {
+  name: string;
+  age: number;
+  count: number;
+}
+
+export interface Payload {
+  name: string;
+}
+
+export class AgeState extends AsyncState<Result, Payload> {
   age = 78;
 }
 
-const changeAgeActionCreator = createActionCreator<number>('change-age');
-
-type Actions = ReturnType<typeof changeAgeActionCreator>;
-
-const reducer = createReducer<Actions, AgeState>(new AgeState());
-reducer.addCase(changeAgeActionCreator, (state, action) => ({
-  ...state,
-  age: action.payload,
-}));
-
-export const ageModule = createModule<AgeState>({
-  id: NAMESPACE,
-  reducerMap: {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    [NAMESPACE]: reducer,
-  },
+async function guessNameByAge(payload: Payload): Promise<Result> {
+  const res = await fetch(`https://api.agify.io/?name=${payload.name}`);
+  return res.json();
+}
+export const { module: ageModule, actionCreators } = createModule<
+  Result,
+  Payload
+>({
+  actionName: 'guessNameByAge',
+  namespace: NAMESPACE,
+  asyncFunction: guessNameByAge,
 });
+
+export const { useStart } = createAsyncHooks(actionCreators);
+export const { useData, useLoading, useRequest } = createAsyncDataHooks(
+  NAMESPACE
+);
