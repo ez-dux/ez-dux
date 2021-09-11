@@ -1,6 +1,9 @@
-import { AsyncState, createModule } from '@ez-dux/async';
-import { createAsyncHooks } from '@ez-dux/async/lib/hooks';
-import { createAsyncDataHooks } from '@ez-dux/async/lib/hooks/createAsyncDataHooks';
+import {
+  AsyncState,
+  createAsyncActionHooks,
+  createAsyncDataHooks,
+  createModule,
+} from '@ez-dux/async';
 
 export const NAMESPACE = 'age-module';
 
@@ -31,7 +34,8 @@ export const { module: ageModule, actionCreators } = createModule<
   asyncFunction: guessNameByAge,
 });
 
-export const { useStart } = createAsyncHooks(actionCreators);
-export const { useData, useLoading, useRequest } = createAsyncDataHooks(
-  NAMESPACE
-);
+export const { useStart } = createAsyncActionHooks(actionCreators);
+export const { useData, useLoading, useRequest } = createAsyncDataHooks<
+  Result,
+  Payload
+>(NAMESPACE);

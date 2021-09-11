@@ -1,21 +1,14 @@
 import React, { SyntheticEvent } from 'react';
 
-import {
-  Payload,
-  Result,
-  useData,
-  useLoading,
-  useRequest,
-  useStart,
-} from '../store/age';
+import { useData, useLoading, useRequest, useStart } from '../store/age';
 
 export const Examples: React.FC = () => {
-  const value = useRequest() as Payload;
+  const value = useRequest();
   const start = useStart();
   const onChange = (e: SyntheticEvent<HTMLInputElement>) => {
     start({ name: e.currentTarget.value });
   };
-  const data = useData() as Result;
+  const data = useData();
   const loading = useLoading();
   return (
     <div className="h-full">
@@ -44,7 +37,7 @@ export const Examples: React.FC = () => {
             <input onChange={onChange} value={value?.name} />
           </div>
           {loading && <div>...loading</div>}
-          {data && <div>{data.age}</div>}
+          {data && <div>{data?.age}</div>}
         </div>
       </div>
     </div>
