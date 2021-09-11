@@ -29,7 +29,8 @@
     "format": "prettier --write src/**/*.ts{,tsx}",
     "lint": "eslint . --ignore-path ../../.eslintignore --ext ts --ext tsx --ext js --ext jsx",
     "lint:fix": "eslint --fix . --ignore-path ../../.eslintignore --ext ts --ext tsx --ext js --ext jsx",
-    "prepub": "yarn build",
+    "predeploy": "yarn build",
+    "deploy": "firebase deploy",
     "deps": "yarn install"
   },
   "eslintConfig": {
