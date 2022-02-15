@@ -1,13 +1,13 @@
 import { O } from 'ts-toolbelt';
 
-interface ActionWithOnlyType<T extends string = string> {
+export interface ActionWithOnlyType<T extends string = string> {
   type: T;
 }
-interface ActionWithOnlyPayload<P = undefined, T extends string = string>
+export interface ActionWithOnlyPayload<P = undefined, T extends string = string>
   extends ActionWithOnlyType<T> {
   payload: P;
 }
-interface ActionWithPayloadAndMeta<
+export interface ActionWithPayloadAndMeta<
   P = undefined,
   T extends string = string,
   M = undefined
@@ -26,22 +26,22 @@ export type Action<
     : ActionWithOnlyPayload<P, T>
   : ActionWithPayloadAndMeta<P, T, M>;
 
-interface ActionCreatorStatic<T extends string> {
+export interface ActionCreatorStatic<T extends string> {
   type: T;
 }
-interface ActionCreatorWithNoParameters<T extends string>
+export interface ActionCreatorWithNoParameters<T extends string>
   extends ActionCreatorStatic<T> {
   (): Action<T>;
 }
 
-interface ActionCreatorWithOnlyPayload<
+export interface ActionCreatorWithOnlyPayload<
   P = undefined,
   T extends string = string
 > extends ActionCreatorStatic<T> {
   (payload: P): Action<P, T>;
 }
 
-interface ActionCreatorWithPayloadAndMeta<
+export interface ActionCreatorWithPayloadAndMeta<
   P = undefined,
   T extends string = string,
   M = undefined
