@@ -1,7 +1,7 @@
 {
   "name": "@ez-dux/react",
   "private": false,
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "ez-dux react",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -44,7 +44,7 @@
     "ts-toolbelt": "^9.3.12",
     "redux-dynamic-modules": "^5.2.3",
     "react-redux": "^7.2.4",
-    "react" :"^18.1.0",
+    "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-async-hook": "^3.6.2"
   }

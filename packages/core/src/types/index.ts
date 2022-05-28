@@ -3,8 +3,10 @@ import { O } from 'ts-toolbelt';
 export interface ActionWithOnlyType<T extends string = string> {
   type: T;
 }
-export interface ActionWithOnlyPayload<P = undefined, T extends string = string>
-  extends ActionWithOnlyType<T> {
+export interface ActionWithOnlyPayload<
+  P = undefined,
+  T extends string = string
+> extends ActionWithOnlyType<T> {
   payload: P;
 }
 export interface ActionWithPayloadAndMeta<
