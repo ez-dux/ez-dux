@@ -5,7 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "@craco/craco": "^6.2.0",
-    "@ez-dux/react": "^1.0.1",
+    "@ez-dux/react": "^1.1.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -52,7 +52,7 @@
     ]
   },
   "devDependencies": {
-    "@ez-dux/core": "^1.0.5",
+    "@ez-dux/core": "^1.1.0",
     "@types/react-syntax-highlighter": "^13.5.2",
     "@typescript-eslint/eslint-plugin": "^4.28.5",
     "@typescript-eslint/parser": "^4.28.5",
